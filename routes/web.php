@@ -14,3 +14,9 @@ Route::post('/register/admin', 'Auth\RegisterController@createAdmin');
 Route::view('/home', 'home')->middleware('auth');
 Route::view('/admin', 'admin');
 Route::view('/game', 'game');
+Route::view('/design', 'design');
+Route::view('/profile', 'profile');
+Route::view('/users', 'users');
+
+Route::view('/user-review', 'user-review');
+Route::view('/game-review', 'game-review');
