@@ -8,7 +8,7 @@
                 <div class="card-header">Profile</div>
 
                 <div class="card-body">
-                     Hi there, profile
+                     This is your profile
                 </div>
             </div>
         </div>

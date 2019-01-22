@@ -83,8 +83,44 @@
                 display: inline-block;
             }
 
+
+
+            div.container {
+                position: absolute;
+                box-shadow: 0 0 20px 0 #5ea3a3;
+                padding: 10px 50px;
+                top: 250px;
+                left: 100px;
+            }
+            .card{
+                padding: 10px;
+            }
+            .card img{
+                display: block;
+                width: 50%;
+                height: auto;
+                border-radius: 50%;
+                border-width: 5px;
+                border-style: solid;
+                border-color: green;
+            }
+            footer{
+                position: fixed;
+                bottom: 0px;
+            }
+            .avg-score{
+                font-size: 16px;
+                color: #5ea3a3;
+            }
+            .email{
+                font-size: 18px;
+                font-weight: bold;
+                color: #488b8f;
+            }
+
         </style>
     </head>
+
     <body>
         <div class="flex-center position-ref full-height">
             <div class="top-left links">
@@ -104,27 +140,73 @@
                 </div>
             @endif
 
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="/resources/images/154.jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="/resources/images/01.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="/resources/images/01.jpg" alt="Third slide">
-                    </div>
+            {{--<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">--}}
+                {{--<div class="carousel-inner">--}}
+                    {{--<div class="carousel-item active">--}}
+                        {{--<img class="d-block w-100" src="/resources/images/154.jpg" alt="First slide">--}}
+                    {{--</div>--}}
+                    {{--<div class="carousel-item">--}}
+                        {{--<img class="d-block w-100" src="/resources/images/01.jpg" alt="Second slide">--}}
+                    {{--</div>--}}
+                    {{--<div class="carousel-item">--}}
+                        {{--<img class="d-block w-100" src="/resources/images/01.jpg" alt="Third slide">--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">--}}
+                    {{--<span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
+                    {{--<span class="sr-only">Previous</span>--}}
+                {{--</a>--}}
+                {{--<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">--}}
+                    {{--<span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
+                    {{--<span class="sr-only">Next</span>--}}
+                {{--</a>--}}
+            {{--</div>--}}
+
+
+
+            <div class="container">
+                <div class="row py-5" id="play">
+                    @foreach(App\User::all() as $user)
+                        <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 m-1">
+                            <img width="250" height="250" src="{{asset('img/c'.($user->id%6 + 1).'.png')}}">
+                            <div class="avg-score text-center mt-2">
+                                avg score: 100
+                            </div>
+                            <div class="email text-center">
+                                {{$user->email}}
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
+
+            {{----}}
+            {{--<div class="card-group" id="card">--}}
+                {{--<div class="card text-white">--}}
+                    {{--<img class="card-img-top" src="https://source.unsplash.com/featured/" alt="Card image top">--}}
+                    {{--<div class="card-img-overlay">--}}
+                        {{--<h3 class="card-title">Card title</h3>--}}
+                        {{--<h4 class="card-subtitle">Card subtitle</h4>--}}
+                        {{--<p class="card-text">This is a simple Card example</p>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="card text-white">--}}
+                    {{--<img class="card-img-top" src="https://source.unsplash.com/featured/" alt="Card image top">--}}
+                    {{--<div class="card-img-overlay">--}}
+                        {{--<h3 class="card-title">Card title</h3>--}}
+                        {{--<h4 class="card-subtitle">Card subtitle</h4>--}}
+                        {{--<p class="card-text">This is a simple Card example</p>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="card text-white">--}}
+                    {{--<img class="card-img-top" src="https://source.unsplash.com/featured/" alt="Card image top">--}}
+                    {{--<div class="card-img-overlay">--}}
+                        {{--<h3 class="card-title">Card title</h3>--}}
+                        {{--<h4 class="card-subtitle">Card subtitle</h4>--}}
+                        {{--<p class="card-text">This is a simple Card example</p>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
 
 
