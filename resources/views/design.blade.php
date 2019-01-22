@@ -10,16 +10,16 @@
                 <div class="card-body">
 
                 </div>
-                <div class="form-group">
+                <form method="POST" action="{{ url("design") }}" >
                     <label for="max">Maximum of scores:</label>
-                    <input type="text" class="form-control" id="max">
+                    <input type="text" class="form-control" name="max">
 
                     <label for="score">Current score:</label>
-                    <input type="text" class="form-control" id="score">
+                    <input type="text" class="form-control" name="score">
 
                     <label >Number of Dices:</label>
 
-                    <label class="radio-inline">
+                    <label class="radio-inline" name="dice">
                         <input type="radio" name="optradio" checked>1
                     </label>
                     <label class="radio-inline">
@@ -30,9 +30,9 @@
                     </label>
 
                     <div>
-                    <button type="button" class="btn btn-success">Save</button>
+                    <button type="submit" class="btn btn-success">Save</button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
